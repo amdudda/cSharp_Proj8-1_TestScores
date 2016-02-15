@@ -74,6 +74,9 @@ namespace Proj8_1_TestScores
             {
                 output += s + "\n";
             }
+            
+            // if there are no scores, let the user know that rather than showing nothing in the box.
+            if (output == "") output = "No scores to display!";  
 
             // and show the info in a messagebox.
             MessageBox.Show(output, "Sorted Scores");
