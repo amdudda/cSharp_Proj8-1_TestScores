@@ -141,12 +141,14 @@
             // 
             // btnClearScores
             // 
+            this.btnClearScores.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClearScores.Location = new System.Drawing.Point(151, 161);
             this.btnClearScores.Name = "btnClearScores";
             this.btnClearScores.Size = new System.Drawing.Size(96, 23);
             this.btnClearScores.TabIndex = 11;
             this.btnClearScores.Text = "&Clear Scores";
             this.btnClearScores.UseVisualStyleBackColor = true;
+            this.btnClearScores.Click += new System.EventHandler(this.btnClearScores_Click);
             // 
             // btnExit
             // 
