@@ -169,9 +169,9 @@
             this.lblMinMax.AutoSize = true;
             this.lblMinMax.Location = new System.Drawing.Point(6, 163);
             this.lblMinMax.Name = "lblMinMax";
-            this.lblMinMax.Size = new System.Drawing.Size(35, 13);
+            this.lblMinMax.Size = new System.Drawing.Size(114, 13);
             this.lblMinMax.TabIndex = 13;
-            this.lblMinMax.Text = "label6";
+            this.lblMinMax.Text = "No scores entered yet.";
             // 
             // frmScoreCalculator
             // 
