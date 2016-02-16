@@ -27,10 +27,38 @@ namespace Proj8_1_TestScores
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (IsValidInt(txtScore.Text))
+            {
+                updateScores();
+                updateMinMax();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Score must be between 0 and 100, inclusive.",
+                    "Invalid Input"
+                    );
+                txtScore.Focus();
+            }
+        }
+
+        private void updateMinMax()
+        {
+            // get highest and lowest scores
+            int min, max;
+            min = allScores.Min();
+            max = allScores.Max();
+
+            // and update the form
+            lblMinMax.Text = "Current low score is: " + min + "\nCurrent high score is: " + max;
+        }
+
+        private void updateScores()
+        {
             // fetch the new score and add it to the list of scores
             int newScore = int.Parse(txtScore.Text);
             allScores.Add(newScore);
-            
+
             // variables to hold results
             int totalOfScores = 0;
             int countOfScores = allScores.Count();
@@ -81,5 +109,18 @@ namespace Proj8_1_TestScores
             // and show the info in a messagebox.
             MessageBox.Show(output, "Sorted Scores");
         }
-    }
+
+        public bool IsValidInt(string toCheck)
+        {
+            int myint;
+            if ((int.TryParse(toCheck, out myint)))
+            {
+                // if it's an integer, verify that it's between 0 and 100 inclusive
+                return (myint >= 0 && myint <= 100);
+            }
+            // and if it falls through, it's not a valid input.
+            return false;
+        }
+
+    }  // end partial class frmScoreCalculator
 }

@@ -41,6 +41,7 @@
             this.btnDisplayScores = new System.Windows.Forms.Button();
             this.btnClearScores = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lblMinMax = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -122,18 +123,18 @@
             // btnAdd
             // 
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAdd.Location = new System.Drawing.Point(172, 40);
+            this.btnAdd.Location = new System.Drawing.Point(134, 40);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(113, 23);
             this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "&Add";
+            this.btnAdd.Text = "&Add Score";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDisplayScores
             // 
             this.btnDisplayScores.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDisplayScores.Location = new System.Drawing.Point(9, 162);
+            this.btnDisplayScores.Location = new System.Drawing.Point(134, 69);
             this.btnDisplayScores.Name = "btnDisplayScores";
             this.btnDisplayScores.Size = new System.Drawing.Size(113, 23);
             this.btnDisplayScores.TabIndex = 10;
@@ -144,9 +145,9 @@
             // btnClearScores
             // 
             this.btnClearScores.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClearScores.Location = new System.Drawing.Point(151, 161);
+            this.btnClearScores.Location = new System.Drawing.Point(134, 98);
             this.btnClearScores.Name = "btnClearScores";
-            this.btnClearScores.Size = new System.Drawing.Size(96, 23);
+            this.btnClearScores.Size = new System.Drawing.Size(112, 23);
             this.btnClearScores.TabIndex = 11;
             this.btnClearScores.Text = "&Clear Scores";
             this.btnClearScores.UseVisualStyleBackColor = true;
@@ -155,13 +156,22 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(171, 203);
+            this.btnExit.Location = new System.Drawing.Point(134, 127);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(112, 23);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lblMinMax
+            // 
+            this.lblMinMax.AutoSize = true;
+            this.lblMinMax.Location = new System.Drawing.Point(6, 163);
+            this.lblMinMax.Name = "lblMinMax";
+            this.lblMinMax.Size = new System.Drawing.Size(35, 13);
+            this.lblMinMax.TabIndex = 13;
+            this.lblMinMax.Text = "label6";
             // 
             // frmScoreCalculator
             // 
@@ -170,6 +180,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.lblMinMax);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClearScores);
             this.Controls.Add(this.btnDisplayScores);
@@ -205,6 +216,7 @@
         private System.Windows.Forms.Button btnDisplayScores;
         private System.Windows.Forms.Button btnClearScores;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblMinMax;
     }
 }
 
