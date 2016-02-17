@@ -79,6 +79,9 @@ namespace Proj8_1_TestScores
             txtScoreTotal.Text = totalOfScores.ToString();
             txtScoreCount.Text = countOfScores.ToString();
             txtAverage.Text = averageScore.ToString("n0");
+            // don't forget to clear the input box so that we reduce data entry errors
+            txtPreviousScore.Text = txtScore.Text;  // this helps user keep track of where they are in data entry
+            txtScore.Text = "";
         }
 
         private void btnClearScores_Click(object sender, EventArgs e)
@@ -89,16 +92,19 @@ namespace Proj8_1_TestScores
             txtScoreTotal.Text = "";  
             txtScoreCount.Text = "";
             txtAverage.Text = "";
+            lblMinMax.Text = "";
         }
 
-        private void btnDisplayScores_Click(object sender, EventArgs e)
+        private void btnDisplaySortedScores_Click(object sender, EventArgs e)
         {
             string output = "";
-            // sort the scores
-            allScores.Sort();
+            // copy the scores to a separate array so we can leave the original data intact
+            int[] sortedScores = new int[allScores.Count];
+            allScores.CopyTo(sortedScores);
+            Array.Sort(sortedScores);
 
             // loop through to concatenate a string of all scores in List.
-            foreach (int s in allScores)
+            foreach (int s in sortedScores)
             {
                 output += s + "\n";
             }
@@ -120,6 +126,21 @@ namespace Proj8_1_TestScores
             }
             // and if it falls through, it's not a valid input.
             return false;
+        }
+
+        private void btnDisplayUnsortedScores_Click(object sender, EventArgs e)
+        {
+            // concatenates allScores array and displays them in the order they were entered
+
+            // gather the data
+            string output = "";
+            foreach (int s in allScores)
+            {
+                output += s + "\n";
+            }
+
+            // and send it to a messagebox
+            MessageBox.Show(output, "Unsorted Scores");
         }
 
     }  // end partial class frmScoreCalculator
